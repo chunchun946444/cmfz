@@ -21,5 +21,6 @@ public class BannerTest {
         banner.setStatus("0");
         System.out.println("你好啊");
         bannerDao.update(banner);
+        System.out.println("你好吗？");
     }
 }
