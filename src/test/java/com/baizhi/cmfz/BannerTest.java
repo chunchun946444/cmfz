@@ -19,6 +19,7 @@ public class BannerTest {
         Banner banner = new Banner();
         banner.setId("ae6a5938-8053-4e11-9f91-004f7c18ea16");
         banner.setStatus("0");
+        System.out.println("你好啊");
         bannerDao.update(banner);
     }
 }
