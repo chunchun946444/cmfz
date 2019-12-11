@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.baizhi.cmfz.dao.BannerDao">
+    <!--分页查询-->
+    <select id="selectAll" resultType="Banner">
+        select * from banner limit #{rows} offset ${(page-1)*rows}
+    </select>
+    <!--添加-->
+    <insert id="add">
+        insert into banner values(#{id},#{name},#{src},#{status},#{uploaddate},#{describee})
+    </insert>
+    <!--修改-->
+    <update id="update">
+        update banner
+        <set>
+            <if test="name!=null">name=#{name},</if>
+            <if test="src!=null">src=#{src},</if>
+            <if test="status!=null">status=#{status},</if>
+            <if test="uploaddate!=null">uploaddate=#{uploaddate},</if>
+            <if test="describee!=null">describee=#{describee},</if>
+        </set>
+        where id=#{id}
+    </update>
+    <!--删除-->
+    <delete id="delete">
+        delete from banner where id = #{id}
+    </delete>
+    <!--查总条数-->
+    <select id="queryCount" resultType="int">
+        select count(*) from banner
+    </select>
+    <!--根据id查一个-->
+    <select id="queryByid" resultType="Banner">
+        select * from banner where id = #{id}
+    </select>
+</mapper>
