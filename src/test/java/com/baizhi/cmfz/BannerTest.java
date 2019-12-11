@@ -22,5 +22,6 @@ public class BannerTest {
         System.out.println("你好啊");
         bannerDao.update(banner);
         System.out.println("你好吗？");
+        System.out.println("java好难啊!");
     }
 }
